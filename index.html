@@ -11,17 +11,28 @@
 <body>
  <div class="main" id="main">
 
-    <h2>Download forecaster</h2>
+    <h1 class="title-blue">Download forecaster</h1>
 
      <form id="mainForm">   
-        <label for="GB">Size in GigaBytes</label>
-        <input type="text" name="gbTxt" id="gbTxt">
-        <label for="GB">Speed in Mbps</label>
-        <input type="text" name="speedInMbpsTxt" id="speedInMbpsTxt">
-        <input type="submit" value="Get">
+      <div class="form-container">
+         <div class="control-container">
+            <span>Size in GigaBytes</span>
+            <input class="control-txt" type="text" name="gbTxt" id="gbTxt" placeholder="Enter the file size...">
+         </div>
+         <div class="control-container">
+            <span>Speed in Mbps</span>
+            <input class="control-txt" type="text" name="speedInMbpsTxt" id="speedInMbpsTxt" placeholder="Enter your speed...">
+         </div>
+         <div class="control-container-btn">
+            <input class="control-btn" type="submit" value="Get">
+         </div>
+        
+        
+      </div>
+        
      </form>
    
-    <div class="result" id="result">
+    <div class="result-div" id="result">
       
     </div>
 

@@ -100,7 +100,7 @@ function calculateSpeed(){
 }
 console.log(result.childElementCount)
 // Initial
-const init = async () =>{
+const calculateNoSpeedSelected = async () =>{
    startTime = new Date().getTime()
    image.src = imageLink;
 };
@@ -117,38 +117,60 @@ function renderCalculation(speedInMbps,downloadSize,kbsPerSecond,timeFrame,resul
 
 }
 
+function mainFunction(result,speedInMbpsTxt) {
+    // If the speed wasn't selected 
+
+    if (speedInMbpsTxt=="") {
+
+        if (result.childElementCount>0) {
+
+            result.removeChild(result.children[0]);
+
+            calculateNoSpeedSelected()
+
+        } else {
+
+            calculateNoSpeedSelected()
+                
+        }
+
+
+    } else {
+
+        if (result.childElementCount>0) {
+            result.removeChild(result.children[0]);
+
+            calculateSpeedSelected(speedInMbpsTxt)
+
+        } else {
+
+            calculateSpeedSelected(speedInMbpsTxt)
+                
+        }
+
+    }
+}
+
+
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
     let speedInMbpsTxt = document.getElementById('speedInMbpsTxt').value
+    let fileSize = document.getElementById('gbTxt').value
 
-    // If the speed wasn't selected 
-    if (speedInMbpsTxt=="") {
-        if (result.childElementCount>0) {
+    // if the file size is less than 0
+    if (fileSize<=0) {
 
-            result.removeChild(result.children[0]);
-    
-            init()
-    
-        } else {
-    
-            init()
-                
-        }
+        alert("File size must be greater than 0")
 
-    
     } else {
-        if (result.childElementCount>0) {
-            result.removeChild(result.children[0]);
 
-            calculateSpeedSelected(speedInMbpsTxt)
-    
-        } else {
-    
-            calculateSpeedSelected(speedInMbpsTxt)
-                
-        }
         
+        mainFunction(result,speedInMbpsTxt)
+
     }
+
+
+    
  
     
 })

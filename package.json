@@ -1,0 +1,20 @@
+{
+  "name": "netspeed-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezequielgmart/netspeed-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezequielgmart/netspeed-calculator/issues"
+  },
+  "homepage": "https://github.com/ezequielgmart/netspeed-calculator#readme"
+}

@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    background-color: rgb(240, 240, 240);
+    margin:0;
+    font-family:Arial
+}
+.main{
+    border:1px solid rgb(135, 189, 250);
+    border-radius: 5px;
+    background-color: rgb(255, 254, 253);
+    width: 60%;
+    padding: 2%;
+    margin: 20% auto auto auto;
+}
+.form-container{
+    width: 60%;
+    margin:0 auto auto auto;
+}
+.title-blue{
+    text-align: center;
+}
+.control-btn{
+    background-color: rgb(110, 178, 255);
+    color: white;
+    padding:2%;
+    width: 80%;
+    margin: 3% auto auto auto;
+    border-radius: 5px;
+    border: 1px solid rgb(91, 108, 255);
+    text-align: center;
+    font-size: 1em;
+    
+}
+.control-btn:hover{
+    background-color: rgb(18, 110, 214);
+    
+    border: 1px solid rgb(13, 37, 252);
+    
+    
+}
+.control-txt{
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid rgb(173, 173, 173);
+    padding:2%;
+    margin: 1% auto auto auto;
+}
+.control-container{
+    
+    margin: 5% auto auto auto;
+}
+.control-container-btn{
+    width: 80%;
+    margin: 1% auto auto auto;
+}
