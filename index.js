@@ -4,6 +4,7 @@ let imageSize =""
 let image = new Image()
 let result = document.getElementById('result')
 let form = document.getElementById('mainForm')
+
 // Gets a random image 
 let imageLink = "https://source.unsplash.com/random?topics=nature"
 
@@ -24,10 +25,10 @@ function getKbsPerSecond(speedInKbps) {
 }
 
 function converTimeFrame(timeFrameInMinutes) {
-    // verificar que el tiempo en minutos sea mayor a una hora (60 minuts)
+    // verify the time in minuts be more that 60 mins
     if (timeFrameInMinutes > 60) {
         
-        // si es mayor dividir cuantas horas tiene 
+        // if its greater than 60mins
         let howManyMinutes = timeFrameInMinutes/60
 
         if (howManyMinutes >= 24) {
@@ -43,7 +44,7 @@ function converTimeFrame(timeFrameInMinutes) {
 }
 function getTimeFrame(downloadSize,kbsPerSecond) {
 
-    // tomamos el tamaño del archivo en gb y lo multiplicamos por me
+    //  take the filesize in gbs and then we multiply by 1024
     let downloadSizeInGbs = (downloadSize*1024)*1024
      let timeFrameInMinutes = ((downloadSizeInGbs/kbsPerSecond)/60).toFixed(2)
      return converTimeFrame(timeFrameInMinutes)
@@ -99,15 +100,17 @@ function calculateSpeed(){
 
 }
 console.log(result.childElementCount)
-// Initial
+// calculate the speed downloanding a random image and calculating the time that its takes to do it
 const calculateNoSpeedSelected = async () =>{
    startTime = new Date().getTime()
    image.src = imageLink;
 };
 
+
+// insert the div with the result
 function renderCalculation(speedInMbps,downloadSize,kbsPerSecond,timeFrame,result) {
     result.innerHTML += `
-    <div>
+    <div class="card-result">
         <p>Your current speed: ${speedInMbps} Mbps </p>
         <p>File size: ${downloadSize} GB </p>
         <p>Kilobytes per Second: <span id="kbsPersecondSpan">${kbsPerSecond}</span> Kbs</p>
@@ -118,14 +121,17 @@ function renderCalculation(speedInMbps,downloadSize,kbsPerSecond,timeFrame,resul
 }
 
 function mainFunction(result,speedInMbpsTxt) {
-    // If the speed wasn't selected 
 
+    // If the speed wasn't selected 
     if (speedInMbpsTxt=="") {
 
+
+        // if it's result on the div already, delete it and place the new result
         if (result.childElementCount>0) {
 
             result.removeChild(result.children[0]);
 
+            // use the function to get the download time with no speed selected
             calculateNoSpeedSelected()
 
         } else {
@@ -140,6 +146,7 @@ function mainFunction(result,speedInMbpsTxt) {
         if (result.childElementCount>0) {
             result.removeChild(result.children[0]);
 
+            // use the function to get the download time with SPEED selected
             calculateSpeedSelected(speedInMbpsTxt)
 
         } else {
